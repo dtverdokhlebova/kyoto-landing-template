@@ -1,0 +1,52 @@
+mixin banner(mods)
+  -
+    const baseName = 'banner'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .banner(class=allMods)&attributes(attributes)
+    .swiper
+      .swiper-wrapper
+        block
+      +ui-swiper-pagination('banner')
+
+mixin banner__item(mods)
+  -
+    const baseName = 'banner__item'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  -
+    const features =[
+      { label: '1', text: 'Выход в прибыль <br>с 1 месяца', },
+      { label: '10', text: 'Окупаемость <br>от 10 месяцев', },
+      { label: 'SPA', text: 'SPA хижина станет культовым местом в вашем городе', },
+    ]
+
+  .banner__item.swiper-slide(class=allMods)&attributes(attributes)
+    .banner__img: img(src=`../../images/banner-img.jpg`, alt='')
+    .inner.banner__inner
+      .banner__content
+        .banner__text
+          +ui-h1('Откройте Японскую SPA хижину Kyoto', 'banner')
+          +ui-h3('И зарабатывайте от 2.5млн тенге в месяц!', 'banner, --font-primary')
+      .banner__actions
+        +ui-button('Оставить заявку', '--min-w-xs')
+      .banner__features
+        each feature in features
+          .banner__feature
+            .banner__feature-label !{feature.label}
+            .banner__feature-text !{feature.text}
+

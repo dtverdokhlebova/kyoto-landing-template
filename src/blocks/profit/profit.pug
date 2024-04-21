@@ -1,0 +1,26 @@
+mixin profit(mods)
+  -
+    const baseName = 'profit'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  -
+    const items =[
+      { text: 'Выручка до открытия' },
+      { text: 'Прибыль в первый месяц' },
+      { text: 'Средняя прибыль в первый месяц' },
+    ]
+
+  .profit(class=allMods)&attributes(attributes)
+    each item in items
+      .profit__item
+        .profit__content
+          +ui-h5('100 000', '--font-secondary')
+        +ui-h5(item.text, 'profit, --semibold')
+    block

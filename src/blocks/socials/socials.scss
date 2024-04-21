@@ -1,0 +1,43 @@
+.socials {
+  --size: 55px;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  color: $black;
+  @include media-tablet {
+    --size: 50px;
+  }
+  &__item {
+    display: block;
+    &--hover-color {
+      @include media-hover {
+        .socials__icon {
+          &-start {
+            opacity: 0;
+          }
+          &-hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+  &__icon {
+    position: relative;
+    width: var(--size);
+    height: var(--size);
+    margin: 0 auto;
+    &-start,
+    &-hover {
+      width: 100%;
+      transition: $transitionDuration;
+    }
+    &-hover {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+    }
+  }
+}

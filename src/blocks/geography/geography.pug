@@ -1,0 +1,19 @@
+mixin geography(mods)
+  -
+    const baseName = 'geography'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .geography(class=allMods)&attributes(attributes)
+    .geography__head
+      +ui-h2('География развития', 'geography').text-uppercase.text-brown
+      +ui-h5('Успейте получить эксклюзив на ваш город!', 'geography, --semibold')
+    .geography__img
+      img(src='../../images/geography-img.png', alt='')
+    block

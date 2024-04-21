@@ -1,0 +1,17 @@
+-
+  const socialsItemsFooter =[
+    { iconHover: 'icon_inst_color', iconStart: 'icon_inst-grey' },
+    { iconHover: 'icon_vk_color', iconStart: 'icon_vk-grey' },
+  ]
+
+footer.footer
+  .inner
+    .footer__main
+      a.footer__logo(href='/'): img(src='../../images/logo.svg' alt='')
+      +socials(socialsItemsFooter, 'footer')
+      .footer__contacts
+        a.footer__phone.ui-h5(href='tel:+70000000000') + 7 (000) 000-00-00
+        +ui-button('Оставить заявку', '--min-w-s')
+    .footer__policies
+      a.footer__policy(href='#') Политика конфиденциальности
+      a.footer__policy(href='#') Разработка сайтов “Генерация”

@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Main</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <link href="" rel="icon" type="image/x-icon">
+    <link href="libs/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <script type="module" crossorigin src="scripts/scripts.js"></script>
+    <link rel="stylesheet" href="styles/index.css">
+  </head>
+  <body ontouchstart>
+    <div class="wrapper">
+      <header class="header">
+        <div class="inner"><a class="header__logo" href="/"><img src="images/logo.svg" alt=""></a>
+          <button class="header__burger-open" onclick="window.openBurgerMenu()">
+            <div class="svg"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.114141 3.01104C0.205453 2.73977 0.730501 2.60414 1.68928 2.60414C2.64807 2.54989 3.78947 2.52276 5.11351 2.52276C5.98098 2.52276 6.87127 2.57701 7.7844 2.68552C8.69753 2.73977 9.565 2.7669 10.3868 2.7669C11.2543 2.7669 12.0076 2.68552 12.6468 2.52276C13.3773 2.36 14.3589 2.14299 15.5916 1.87173C16.87 1.54621 18.2169 1.24782 19.6322 0.976552C21.0932 0.705288 22.5314 0.488277 23.9467 0.325518C25.3621 0.108506 26.6176 0 27.7134 0C28.5808 0 29.2657 0.0813792 29.7679 0.244137C30.2245 0.406897 30.818 0.678163 31.5485 1.05793C32.279 1.4377 32.9639 1.87173 33.603 2.36C34.2422 2.84828 34.7901 3.36368 35.2467 3.90621C35.7489 4.44874 36 4.93702 36 5.37104C36 5.96782 35.5206 6.4561 34.5618 6.83587C33.6487 7.16139 31.9594 7.32415 29.494 7.32415C23.1021 7.32415 18.1027 7.51403 14.4959 7.8938C10.889 8.21932 8.49207 8.51771 7.30501 8.78898C6.52885 8.89748 5.68421 8.7076 4.77108 8.21932C3.85796 7.67679 3.01332 7.08001 2.23716 6.42897C1.50666 5.72369 0.913126 5.04552 0.456563 4.39449C5.10249e-08 3.6892 -0.114141 3.22805 0.114141 3.01104Z" fill="currentColor"/>
+<path d="M0.114141 16.6014C0.205453 16.3301 0.730501 16.1945 1.68928 16.1945C2.64807 16.1402 3.78947 16.1131 5.11351 16.1131C5.98098 16.1131 6.87127 16.1673 7.7844 16.2759C8.69753 16.3301 9.565 16.3572 10.3868 16.3572C11.2543 16.3572 12.0076 16.2759 12.6468 16.1131C13.3773 15.9503 14.3589 15.7333 15.5916 15.4621C16.87 15.1365 18.2169 14.8381 19.6322 14.5669C21.0932 14.2956 22.5314 14.0786 23.9467 13.9159C25.3621 13.6988 26.6176 13.5903 27.7134 13.5903C28.5808 13.5903 29.2657 13.6717 29.7679 13.8345C30.2245 13.9972 30.818 14.2685 31.5485 14.6483C32.279 15.028 32.9639 15.4621 33.603 15.9503C34.2422 16.4386 34.7901 16.954 35.2467 17.4965C35.7489 18.0391 36 18.5273 36 18.9614C36 19.5582 35.5206 20.0464 34.5618 20.4262C33.6487 20.7517 31.9594 20.9145 29.494 20.9145C23.1021 20.9145 18.1027 21.1044 14.4959 21.4841C10.889 21.8097 8.49207 22.108 7.30501 22.3793C6.52885 22.4878 5.68421 22.2979 4.77108 21.8097C3.85796 21.2671 3.01332 20.6703 2.23716 20.0193C1.50666 19.314 0.913126 18.6359 0.456563 17.9848C5.10249e-08 17.2795 -0.114141 16.8184 0.114141 16.6014Z" fill="currentColor"/>
+<path d="M0.114141 30.1927C0.205453 29.9214 0.730501 29.7858 1.68928 29.7858C2.64807 29.7315 3.78947 29.7044 5.11351 29.7044C5.98098 29.7044 6.87127 29.7587 7.7844 29.8672C8.69753 29.9214 9.565 29.9485 10.3868 29.9485C11.2543 29.9485 12.0076 29.8672 12.6468 29.7044C13.3773 29.5416 14.3589 29.3246 15.5916 29.0534C16.87 28.7278 18.2169 28.4295 19.6322 28.1582C21.0932 27.8869 22.5314 27.6699 23.9467 27.5072C25.3621 27.2901 26.6176 27.1816 27.7134 27.1816C28.5808 27.1816 29.2657 27.263 29.7679 27.4258C30.2245 27.5885 30.818 27.8598 31.5485 28.2396C32.279 28.6193 32.9639 29.0534 33.603 29.5416C34.2422 30.0299 34.7901 30.5453 35.2467 31.0879C35.7489 31.6304 36 32.1187 36 32.5527C36 33.1495 35.5206 33.6377 34.5618 34.0175C33.6487 34.343 31.9594 34.5058 29.494 34.5058C23.1021 34.5058 18.1027 34.6957 14.4959 35.0754C10.889 35.401 8.49207 35.6994 7.30501 35.9706C6.52885 36.0791 5.68421 35.8892 4.77108 35.401C3.85796 34.8584 3.01332 34.2616 2.23716 33.6106C1.50666 32.9053 0.913126 32.2272 0.456563 31.5761C5.10249e-08 30.8708 -0.114141 30.4097 0.114141 30.1927Z" fill="currentColor"/>
+</svg>
+
+            </div>
+          </button>
+          <div class="header__burger">
+            <button class="header__close" onclick="window.closeBurgerMenu()">
+              <div class="svg"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M20.0007 20.0002L31.6673 31.6668M20.0007 20.0002L8.33398 8.3335M20.0007 20.0002L8.33398 31.6668M20.0007 20.0002L31.6673 8.3335" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+</svg>
+
+              </div>
+            </button>
+            <div class="header__burger-wrapper">
+              <ul class="header__menu">
+                <li class="header__menu-item"><a class="header__menu-link active" href="#">О компании</a></li>
+                <li class="header__menu-item"><a class="header__menu-link" href="#">Тарифы</a></li>
+                <li class="header__menu-item"><a class="header__menu-link" href="#">Отзывы</a></li>
+                <li class="header__menu-item"><a class="header__menu-link" href="#">Контакты</a></li>
+              </ul>
+              <div class="header__actions"><a class="header__phone" href="tel:+70000000000">+7 (000) 000-00-00</a>
+                <button class="ui-button ui-button--p-xs ui-button--fz-xs ui-button--outline-gradient"><span>Заказать звонок</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main class="main">
+        <div class="banner">
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="banner__item swiper-slide">
+                <div class="banner__img"><img src="images/banner-img.jpg" alt=""/></div>
+                <div class="inner banner__inner">
+                  <div class="banner__content">
+                    <div class="banner__text">
+                      <div class="ui-h1 banner__ui-h1">Откройте Японскую SPA хижину Kyoto
+                      </div>
+                      <div class="ui-h3 banner__ui-h3 ui-h3--font-primary">И зарабатывайте от 2.5млн тенге в месяц!
+                      </div>
+                    </div>
+                  </div>
+                  <div class="banner__actions">
+                    <button class="ui-button ui-button--min-w-xs"><span>Оставить заявку</span>
+                    </button>
+                  </div>
+                  <div class="banner__features">
+                    <div class="banner__feature">
+                      <div class="banner__feature-label">1</div>
+                      <div class="banner__feature-text">Выход в прибыль <br>с 1 месяца</div>
+                    </div>
+                    <div class="banner__feature">
+                      <div class="banner__feature-label">10</div>
+                      <div class="banner__feature-text">Окупаемость <br>от 10 месяцев</div>
+                    </div>
+                    <div class="banner__feature">
+                      <div class="banner__feature-label">SPA</div>
+                      <div class="banner__feature-text">SPA хижина станет культовым местом в вашем городе</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="banner__item swiper-slide">
+                <div class="banner__img"><img src="images/banner-img.jpg" alt=""/></div>
+                <div class="inner banner__inner">
+                  <div class="banner__content">
+                    <div class="banner__text">
+                      <div class="ui-h1 banner__ui-h1">Откройте Японскую SPA хижину Kyoto
+                      </div>
+                      <div class="ui-h3 banner__ui-h3 ui-h3--font-primary">И зарабатывайте от 2.5млн тенге в месяц!
+                      </div>
+                    </div>
+                  </div>
+                  <div class="banner__actions">
+                    <button class="ui-button ui-button--min-w-xs"><span>Оставить заявку</span>
+                    </button>
+                  </div>
+                  <div class="banner__features">
+                    <div class="banner__feature">
+                      <div class="banner__feature-label">1</div>
+                      <div class="banner__feature-text">Выход в прибыль <br>с 1 месяца</div>
+                    </div>
+                    <div class="banner__feature">
+                      <div class="banner__feature-label">10</div>
+                      <div class="banner__feature-text">Окупаемость <br>от 10 месяцев</div>
+                    </div>
+                    <div class="banner__feature">
+                      <div class="banner__feature-label">SPA</div>
+                      <div class="banner__feature-text">SPA хижина станет культовым местом в вашем городе</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="banner__item swiper-slide">
+                <div class="banner__img"><img src="images/banner-img.jpg" alt=""/></div>
+                <div class="inner banner__inner">
+                  <div class="banner__content">
+                    <div class="banner__text">
+                      <div class="ui-h1 banner__ui-h1">Откройте Японскую SPA хижину Kyoto
+                      </div>
+                      <div class="ui-h3 banner__ui-h3 ui-h3--font-primary">И зарабатывайте от 2.5млн тенге в месяц!
+                      </div>
+                    </div>
+                  </div>
+                  <div class="banner__actions">
+                    <button class="ui-button ui-button--min-w-xs"><span>Оставить заявку</span>
+                    </button>
+                  </div>
+                  <div class="banner__features">
+                    <div class="banner__feature">
+                      <div class="banner__feature-label">1</div>
+                      <div class="banner__feature-text">Выход в прибыль <br>с 1 месяца</div>
+                    </div>
+                    <div class="banner__feature">
+                      <div class="banner__feature-label">10</div>
+                      <div class="banner__feature-text">Окупаемость <br>от 10 месяцев</div>
+                    </div>
+                    <div class="banner__feature">
+                      <div class="banner__feature-label">SPA</div>
+                      <div class="banner__feature-text">SPA хижина станет культовым местом в вашем городе</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="ui-swiper-pagination banner__ui-swiper-pagination">
+              <div class="swiper-pagination">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section section--why-us section--pb-0">
+          <div class="inner">
+            <div class="why-us">
+              <div class="why-us__img"><img src="images/why-us-img.jpg" alt=""/></div>
+              <div class="accordions">
+                <div class="accordions__item">
+                  <div class="accordions__content">
+                    <div class="accordions__head">
+                      <div class="ui-h5 ui-h5--semibold ui-h5--mob-fz-s">Спрос на SPA услуги продолжает расти
+                      </div>
+                      <div class="accordions__button">
+                        <div class="svg"></div>
+                      </div>
+                    </div>
+                    <div class="accordions__body">
+                      <div class="ui-p1">По уровню насыщения рынок SPA услуг СНГ все еще сильно отстает от азиатских, европейских или американских рынков, создавая существенный потенциал для дальнейшего роста
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordions__item">
+                  <div class="accordions__content">
+                    <div class="accordions__head">
+                      <div class="ui-h5 ui-h5--semibold ui-h5--mob-fz-s">Мы умеем формировать спрос на подарочные сертификаты
+                      </div>
+                      <div class="accordions__button">
+                        <div class="svg"></div>
+                      </div>
+                    </div>
+                    <div class="accordions__body">
+                      <div class="ui-p1">
+                        На этапе позиционирования и маркетинга мы делаем акцент
+                        на продажах подарочных сертификатов. Объем рынка подарков
+                        не сопоставим с рынком SPA услуг. Кроме того, подарочные сертификаты более выгодны с финансовой точки зрения
+                        в сравнении с традиционными SPA услугами.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordions__item">
+                  <div class="accordions__content">
+                    <div class="accordions__head">
+                      <div class="ui-h5 ui-h5--semibold ui-h5--mob-fz-s">Бизнес модель с возможностью варьировать загрузку салона, более низкими фиксированными издержками и зависимостью от доллара
+                      </div>
+                      <div class="accordions__button">
+                        <div class="svg"></div>
+                      </div>
+                    </div>
+                    <div class="accordions__body">
+                      <div class="ui-p1">В отличие от традиционных тайских SPA салонов (которые занимают более 50% рынка) наша концепция позволяет привлекать как местных, так и зарубежных специалистов. Это позволяет нашей модели быть более устойчивой, так как мы перестаем быть привязанными к курс доллара, а также можем варьировать загрузку салона.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordions__item">
+                  <div class="accordions__content">
+                    <div class="accordions__head">
+                      <div class="ui-h5 ui-h5--semibold ui-h5--mob-fz-s">Работа по бартеру приводит к существенной экономии
+                      </div>
+                      <div class="accordions__button">
+                        <div class="svg"></div>
+                      </div>
+                    </div>
+                    <div class="accordions__body">
+                      <div class="ui-p1">Благодаря сертификатам мы часто работаем с нашими партнерами по бартеру, что приводит к невероятной экономии! Например, еще до открытия в г. Актобе (март 2024г.) мы запустили наружную (более 70 банеров) и радио (все местные радиостанции) рекламу исключительно по бартеру.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section">
+          <div class="inner">
+            <div class="about">
+              <div class="about__content">
+                <div class="about__head">
+                  <div class="ui-h2 about__ui-h2 text-uppercase text-brown">о компании
+                  </div>
+                </div>
+                <div class="ui-h5 ui-h5--semibold">
+                  <p>
+                    Kyoto SPA - это уникальное погружение в&nbsp;атмосферу древней японской деревни.<br>Наш дизайн, мастерски воплощенный в&nbsp;дереве, бамбуке и тростнике, с акцентами изящной тканевой росписи, создает аутентичное ощущение спокойствия и гармонии. Наш инновационный подход к Wellness-отдыху расширяет границы традиционного массажа, предлагая комплексные SPA ритуалы для создания неповторимых впечатлений.</p>
+                  <p>Франшиза Kyoto SPA предоставляет вам шанс стать владельцем культового места, куда будет мечтать попасть каждый житель Вашего города. SPA хижина будет ассоциироваться с высочайшим качеством и изысканным вкусом, привлекая гостей, желающих испытать исключительность и магию Kyoto</p>
+                </div>
+              </div>
+              <div class="about__pictures">
+                <div class="about__img about__img--main"><img src="images/about-img-1.jpg" alt=""/></div>
+                <div class="about__img about__img--top"><img src="images/about-img-2.jpg" alt=""/></div>
+                <div class="about__img about__img--bottom"><img src="images/about-img-3.jpg" alt=""/></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section section--pt-0 section--geography">
+          <div class="inner">
+            <div class="geography">
+              <div class="geography__head">
+                <div class="ui-h2 geography__ui-h2 text-uppercase text-brown">География развития
+                </div>
+                <div class="ui-h5 geography__ui-h5 ui-h5--semibold">Успейте получить эксклюзив на ваш город!
+                </div>
+              </div>
+              <div class="geography__img"><img src="images/geography-img.png" alt=""/></div>
+            </div>
+          </div>
+        </div>
+        <div class="section section--pt-0 section--pb-0">
+          <div class="inner">
+            <div class="section-head section-head--max-w section-head--mb">
+              <div class="ui-h2 section-head__ui-h2 text-brown">Что вы получаете открываясь с нами
+              </div>
+            </div>
+            <div class="advantages">
+              <div class="advantages__item">
+                <div class="advantages__img"><img src="images/advantages-img-1.jpg" alt=""/></div>
+                <div class="advantages__content">
+                  <div class="advantages__icon"><img src="images/advantages-icon-1.svg" alt=""/></div>
+                  <div class="advantages__text">
+                    <div class="ui-h5 advantages__ui-h5 ui-h5--semibold ui-h5--t-fz-l">Помещение
+                    </div>
+                    <ul class="advantages__list ui-p1 ui-p1--semibold">
+                      <li>Подробная инструкция по поиску</li>
+                      <li>Презентация для арендодателя</li>
+                      <li>Помощь в переговорах </li>
+                      <li>с собственником</li>
+                      <li>Дизайн проект</li>
+                      <li>Проведение отделочных работ</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="advantages__item">
+                <div class="advantages__img"><img src="images/advantages-img-2.jpg" alt=""/></div>
+                <div class="advantages__content">
+                  <div class="advantages__icon"><img src="images/advantages-icon-2.svg" alt=""/></div>
+                  <div class="advantages__text">
+                    <div class="ui-h5 advantages__ui-h5 ui-h5--semibold ui-h5--t-fz-l">Обучение
+                    </div>
+                    <ul class="advantages__list ui-p1 ui-p1--semibold">
+                      <li>Детальное обучение партнера ведению бизнеса</li>
+                      <li>Подробное обучение всех сотрудников (видео, тексты, тесты) с вашим минимальным вовлечением</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="advantages__item">
+                <div class="advantages__img"><img src="images/advantages-img-3.jpg" alt=""/></div>
+                <div class="advantages__content">
+                  <div class="advantages__icon"><img src="images/advantages-icon-3.svg" alt=""/></div>
+                  <div class="advantages__text">
+                    <div class="ui-h5 advantages__ui-h5 ui-h5--semibold ui-h5--t-fz-l">Продажи
+                    </div>
+                    <ul class="advantages__list ui-p1 ui-p1--semibold">
+                      <li>Обучение работе в amoCRM</li>
+                      <li>Скрипты продаж</li>
+                      <li>Обучение продажам</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="advantages__item">
+                <div class="advantages__img"><img src="images/advantages-img-4.jpg" alt=""/></div>
+                <div class="advantages__content">
+                  <div class="advantages__icon"><img src="images/advantages-icon-4.svg" alt=""/></div>
+                  <div class="advantages__text">
+                    <div class="ui-h5 advantages__ui-h5 ui-h5--semibold ui-h5--t-fz-l">Настройка систем
+                    </div>
+                    <ul class="advantages__list ui-p1 ui-p1--semibold">
+                      <li>Настройка amoCRM</li>
+                      <li>Настройка Yclients или Altegio</li>
+                      <li>Чат-бот, который автоматизирует работу с базой гостей</li>
+                      <li>Внедрение бонусной системы</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="advantages__item">
+                <div class="advantages__img"><img src="images/advantages-img-5.jpg" alt=""/></div>
+                <div class="advantages__content">
+                  <div class="advantages__icon"><img src="images/advantages-icon-5.svg" alt=""/></div>
+                  <div class="advantages__text">
+                    <div class="ui-h5 advantages__ui-h5 ui-h5--semibold ui-h5--t-fz-l">Маркетинг
+                    </div>
+                    <ul class="advantages__list ui-p1 ui-p1--semibold">
+                      <li>Масштабное открытие, на котором будет от 50 гостей</li>
+                      <li>Многофункциональный сайт</li>
+                      <li>Брендбук</li>
+                      <li>Оформление картографических сервисов с SEO продвижением</li>
+                      <li>Маркетинговый план</li>
+                      <li>Макеты печатной продукции</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="advantages__item">
+                <div class="advantages__img"><img src="images/advantages-img-6.jpg" alt=""/></div>
+                <div class="advantages__content">
+                  <div class="advantages__icon"><img src="images/advantages-icon-6.svg" alt=""/></div>
+                  <div class="advantages__text">
+                    <div class="ui-h5 advantages__ui-h5 ui-h5--semibold ui-h5--t-fz-l">Отдел контроля качества
+                    </div>
+                    <ul class="advantages__list ui-p1 ui-p1--semibold">
+                      <li>Обзвон базы гостей для поиска точек роста в сервисе, маркетинге и продажах</li>
+                      <li>Приглашение тайных гостей</li>
+                      <li>Проверка качества звонков и переписок менеджеров и администраторов</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section section--saving">
+          <div class="inner">
+            <div class="section-head section-head--mb">
+              <div class="ui-h2 section-head__ui-h2 text-brown">Сколько вы сэкономите?
+              </div>
+            </div>
+            <div class="saving">
+              <div class="saving-list">
+                <div class="saving-list__item">
+                  <div class="saving-list__content">
+                    <div class="ui-p1 saving-list__ui-p1 ui-p1--semibold">Аналогичный дизайн проект
+                    </div>
+                    <div class="saving-list__price"><span class="ui-p3 ui-p3--font-secondary">от</span><span class="ui-h5 ui-h5--font-secondary ui-h5--t-fz-l">500.000р.</span></div>
+                  </div>
+                </div>
+                <div class="saving-list__item">
+                  <div class="saving-list__content">
+                    <div class="ui-p1 saving-list__ui-p1 ui-p1--semibold">Создание аналогичного сайта
+                    </div>
+                    <div class="saving-list__price"><span class="ui-p3 ui-p3--font-secondary">от</span><span class="ui-h5 ui-h5--font-secondary ui-h5--t-fz-l">500.000р.</span></div>
+                  </div>
+                </div>
+                <div class="saving-list__item">
+                  <div class="saving-list__content">
+                    <div class="ui-p1 saving-list__ui-p1 ui-p1--semibold">Дизайн (существующие макеты)
+                    </div>
+                    <div class="saving-list__price"><span class="ui-p3 ui-p3--font-secondary">от</span><span class="ui-h5 ui-h5--font-secondary ui-h5--t-fz-l">150.000р.</span></div>
+                  </div>
+                </div>
+                <div class="saving-list__item">
+                  <div class="saving-list__content">
+                    <div class="ui-p1 saving-list__ui-p1 ui-p1--semibold">Настройка amoCRM и телефонии
+                    </div>
+                    <div class="saving-list__price"><span class="ui-p3 ui-p3--font-secondary">от</span><span class="ui-h5 ui-h5--font-secondary ui-h5--t-fz-l">90.000р.</span></div>
+                  </div>
+                </div>
+                <div class="saving-list__item">
+                  <div class="saving-list__content">
+                    <div class="ui-p1 saving-list__ui-p1 ui-p1--semibold">Скрипты продаж
+                    </div>
+                    <div class="saving-list__price"><span class="ui-p3 ui-p3--font-secondary">от</span><span class="ui-h5 ui-h5--font-secondary ui-h5--t-fz-l">80.000р.</span></div>
+                  </div>
+                </div>
+                <div class="saving-list__item">
+                  <div class="saving-list__content">
+                    <div class="ui-p1 saving-list__ui-p1 ui-p1--semibold">Обучение продажам
+                    </div>
+                    <div class="saving-list__price"><span class="ui-p3 ui-p3--font-secondary">от</span><span class="ui-h5 ui-h5--font-secondary ui-h5--t-fz-l">50.000р.</span></div>
+                  </div>
+                </div>
+                <div class="saving-list__item">
+                  <div class="saving-list__content">
+                    <div class="ui-p1 saving-list__ui-p1 ui-p1--semibold">Настройка Yclients/Altegio
+                    </div>
+                    <div class="saving-list__price"><span class="ui-p3 ui-p3--font-secondary">от</span><span class="ui-h5 ui-h5--font-secondary ui-h5--t-fz-l">40.000р.</span></div>
+                  </div>
+                </div>
+                <div class="saving-list__item">
+                  <div class="saving-list__content">
+                    <div class="ui-p1 saving-list__ui-p1 ui-p1--semibold">Оптимизация картографических серисов
+                    </div>
+                    <div class="saving-list__price"><span class="ui-p3 ui-p3--font-secondary">от</span><span class="ui-h5 ui-h5--font-secondary ui-h5--t-fz-l">30.000р.</span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="saving-info">
+                <div class="ui-h5 saving-info__ui-h5">
+                  Это лишь то, что можно явно посчитать… <br>
+                  Недочеты в выборе помещения, работе строителей, художников, управляющих, администраторов, маркетологов могут привести к еще большим расходам или упущенной выручке…
+                </div>
+                <div class="saving-info__title">Всего Вы Экономите:</div>
+                <div class="saving-info__total"><span class="ui-h5 ui-h5--font-secondary">от</span><span class="ui-h2">1.4 млн</span></div>
+                <div class="ui-h5 saving-info__ui-h5">при паушальном взносе 1млн
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section section--pt-0">
+          <div class="inner">
+            <div class="section-head section-head--mb">
+              <div class="ui-h2 section-head__ui-h2 text-brown">Сколько можно заработать
+              </div>
+            </div>
+            <div class="profit">
+              <div class="profit__item">
+                <div class="profit__content">
+                  <div class="ui-h5 ui-h5--font-secondary">100 000
+                  </div>
+                </div>
+                <div class="ui-h5 profit__ui-h5 ui-h5--semibold">Выручка до открытия
+                </div>
+              </div>
+              <div class="profit__item">
+                <div class="profit__content">
+                  <div class="ui-h5 ui-h5--font-secondary">100 000
+                  </div>
+                </div>
+                <div class="ui-h5 profit__ui-h5 ui-h5--semibold">Прибыль в первый месяц
+                </div>
+              </div>
+              <div class="profit__item">
+                <div class="profit__content">
+                  <div class="ui-h5 ui-h5--font-secondary">100 000
+                  </div>
+                </div>
+                <div class="ui-h5 profit__ui-h5 ui-h5--semibold">Средняя прибыль в первый месяц
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section section--pt-0 section--contacts">
+          <div class="inner">
+            <div class="section-head section-head--mb-xs">
+              <div class="ui-h2 section-head__ui-h2 text-brown">Контакты
+              </div>
+            </div>
+            <div class="contacts">
+              <div class="contacts__map"><img src="images/contacts-img.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover;"/></div>
+              <div class="contacts__wrapper">
+                <div class="contacts__col">
+                  <div class="ui-h5 contacts__ui-h5 ui-h5--semibold">Адрес:
+                  </div>
+                  <div class="contacts__text">
+                    <div class="ui-p1 contacts__ui-p1 ui-p1--p-mb-s ui-p1--mob-xs">г. Москва, ул. Выдуманная 15 к2
+                    </div>
+                    <div class="ui-p2 contacts__ui-p2">Станции метро рядом:
+                    </div>
+                    <div class="contacts__stations">
+                      <div class="contacts__station">Название метро 1</div>
+                      <div class="contacts__station">Название метро 1</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="contacts__col">
+                  <div class="ui-h5 contacts__ui-h5 ui-h5--semibold">Время работы:
+                  </div>
+                  <div class="contacts__text">
+                    <div class="ui-p1 contacts__ui-p1 ui-p1--p-mb-s ui-p1--mob-xs">
+                      <p>ПН-ПТ: 09:00-21:00</p>
+                      <p>СБ-ВС: 10:00-22:00</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="contacts__col">
+                  <div class="ui-h5 contacts__ui-h5 ui-h5--semibold">Связаться:
+                  </div>
+                  <div class="contacts__text">
+                    <div class="ui-p1 contacts__ui-p1 ui-p1--p-mb-s ui-p1--mob-xs">
+                      <p><a href="tel:+70000000000">+7 (000) 000-00-00</a></p>
+                      <p><a href="tel:+70000000000">+7 (000) 000-00-00</a></p>
+                      <p><a href="mailto:test@mail.ru">test@mail.ru</a></p>
+                    </div>
+                  </div>
+                  <div class="contacts__actions"><a class="ui-button ui-button--px-s ui-button--py-s ui-button--outline ui-button--mob-w-100" href="#"><span>Написать в WhatsApp</span></a>
+                  </div>
+                </div>
+                <div class="contacts__col">
+                  <div class="contacts__text">
+                    <div class="ui-h5 contacts__ui-h5 ui-h5--semibold">Мы в социальных сетях:
+                    </div>
+                    <div class="socials contacts__socials"><a class="socials__item socials__item--hover-color" href="#">
+                        <div class="socials__icon"><img class="socials__icon-start" src="images/icon_inst.svg" alt=""/><img class="socials__icon-hover" src="images/icon_inst_color.svg" alt=""/>
+                        </div></a><a class="socials__item socials__item--hover-color" href="#">
+                        <div class="socials__icon"><img class="socials__icon-start" src="images/icon_vk.svg" alt=""/><img class="socials__icon-hover" src="images/icon_vk_color.svg" alt=""/>
+                        </div></a>
+                    </div>
+                    <div class="contacts__actions contacts__actions--max-w contacts__actions--mob-none"><a class="ui-button ui-button--w-100 ui-button--py-s" href="#"><span>Оформить сертификат</span></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer class="footer">
+        <div class="inner">
+          <div class="footer__main"><a class="footer__logo" href="/"><img src="images/logo.svg" alt=""></a>
+            <div class="socials footer__socials"><a class="socials__item socials__item--hover-color" href="#">
+                <div class="socials__icon"><img class="socials__icon-start" src="images/icon_inst-grey.svg" alt=""/><img class="socials__icon-hover" src="images/icon_inst_color.svg" alt=""/>
+                </div></a><a class="socials__item socials__item--hover-color" href="#">
+                <div class="socials__icon"><img class="socials__icon-start" src="images/icon_vk-grey.svg" alt=""/><img class="socials__icon-hover" src="images/icon_vk_color.svg" alt=""/>
+                </div></a>
+            </div>
+            <div class="footer__contacts"><a class="footer__phone ui-h5" href="tel:+70000000000">+ 7 (000) 000-00-00</a>
+              <button class="ui-button ui-button--min-w-s"><span>Оставить заявку</span>
+              </button>
+            </div>
+          </div>
+          <div class="footer__policies"><a class="footer__policy" href="#">Политика конфиденциальности</a><a class="footer__policy" href="#">Разработка сайтов “Генерация”</a></div>
+        </div>
+      </footer>
+    </div>
+    <script src="libs/jquery/jquery-3.6.4.min.js"></script>
+    <script src="libs/swiper/swiper-bundle.min.js"></script>
+    
+  </body>
+</html>

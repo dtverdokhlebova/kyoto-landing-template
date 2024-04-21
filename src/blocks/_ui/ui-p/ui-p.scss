@@ -1,0 +1,36 @@
+.ui-p1 {
+  font-size: 18px;
+  line-height: 1.3;
+  &--mob-xs {
+    @include media-tablet {
+      font-size: 14px;
+    }
+  }
+}
+.ui-p2 {
+  font-size: 14px;
+  line-height: 1.3;
+}
+.ui-p3 {
+  font-size: 12px;
+  line-height: 1.3;
+}
+[class*='ui-p'] {
+  p {
+    margin: 0;
+  }
+  p:not(:last-child) {
+    margin-bottom: 1.2em;
+  }
+  &[class*='--p-mb-s'] {
+    p:not(:last-child) {
+      margin-bottom: 10px;
+      @include media-tablet {
+        margin-bottom: 5px;
+      }
+    }
+  }
+  &[class*='--font-secondary'] {
+    font-family: $fontHZ;
+  }
+}

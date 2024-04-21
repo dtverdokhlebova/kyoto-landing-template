@@ -1,0 +1,41 @@
+extends ../../layouts/layout
+
+block variables
+  -
+    const pageName = 'main'
+    const pageTitle = 'Main'
+
+block content
+  main.main
+    +banner
+      -for(let i=0; i<3; i++)
+        +banner__item
+    +section('--why-us, --pb-0')
+      .inner
+        +why-us
+    +section
+      .inner
+        +about
+    +section('--pt-0, --geography')
+      .inner
+        +geography
+    +section('--pt-0, --pb-0')
+      .inner
+        +section-head('--max-w, --mb')
+          +ui-h2('Что вы получаете открываясь с нами', 'section-head').text-brown
+        +advantages
+    +section('--saving')
+      .inner
+        +section-head('--mb')
+          +ui-h2('Сколько вы сэкономите?', 'section-head').text-brown
+        +saving
+    +section('--pt-0')
+      .inner
+        +section-head('--mb')
+          +ui-h2('Сколько можно заработать', 'section-head').text-brown
+        +profit
+    +section('--pt-0, --contacts')
+      .inner
+        +section-head('--mb-xs')
+          +ui-h2('Контакты', 'section-head').text-brown
+        +contacts

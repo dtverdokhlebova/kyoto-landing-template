@@ -1,0 +1,29 @@
+mixin about(mods)
+  -
+    const baseName = 'about'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .about(class=allMods)&attributes(attributes)
+    .about__content
+      .about__head
+        +ui-h2('о компании', 'about').text-uppercase.text-brown
+      +ui-h5('', '--semibold')
+        p Kyoto SPA - это уникальное погружение в&nbsp;атмосферу древней японской деревни.
+          | <br>Наш дизайн, мастерски воплощенный в&nbsp;дереве, бамбуке и тростнике, с акцентами изящной тканевой росписи, создает аутентичное ощущение спокойствия и гармонии. Наш инновационный подход к Wellness-отдыху расширяет границы традиционного массажа, предлагая комплексные SPA ритуалы для создания неповторимых впечатлений.
+        p Франшиза Kyoto SPA предоставляет вам шанс стать владельцем культового места, куда будет мечтать попасть каждый житель Вашего города. SPA хижина будет ассоциироваться с высочайшим качеством и изысканным вкусом, привлекая гостей, желающих испытать исключительность и магию Kyoto
+    .about__pictures
+      .about__img.about__img--main
+        img(src='../../images/about-img-1.jpg', alt='')
+      .about__img.about__img--top
+        img(src='../../images/about-img-2.jpg', alt='')
+      .about__img.about__img--bottom
+        img(src='../../images/about-img-3.jpg', alt='')
+
+    block

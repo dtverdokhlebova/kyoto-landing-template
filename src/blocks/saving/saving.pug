@@ -1,0 +1,43 @@
+mixin saving(mods)
+  -
+    const baseName = 'saving'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  -
+    const items =[
+      { text: 'Аналогичный дизайн проект', price: '500.000р.' },
+      { text: 'Создание аналогичного сайта', price: '500.000р.' },
+      { text: 'Дизайн (существующие макеты)', price: '150.000р.' },
+      { text: 'Настройка amoCRM и телефонии', price: '90.000р.' },
+      { text: 'Скрипты продаж', price: '80.000р.' },
+      { text: 'Обучение продажам', price: '50.000р.' },
+      { text: 'Настройка Yclients/Altegio', price: '40.000р.' },
+      { text: 'Оптимизация картографических серисов', price: '30.000р.' },
+    ]
+
+  .saving(class=allMods)&attributes(attributes)
+    .saving-list
+      each item in items
+        .saving-list__item
+          .saving-list__content
+            +ui-p1(item.text, 'saving-list, --semibold')
+            .saving-list__price
+              span.ui-p3.ui-p3--font-secondary от
+              span.ui-h5.ui-h5--font-secondary.ui-h5--t-fz-l !{item.price}
+    .saving-info
+      +ui-h5('', 'saving-info')
+        | Это лишь то, что можно явно посчитать… <br>
+        | Недочеты в выборе помещения, работе строителей, художников, управляющих, администраторов, маркетологов могут привести к еще большим расходам или упущенной выручке…
+      .saving-info__title Всего Вы Экономите:
+      .saving-info__total
+        span.ui-h5.ui-h5--font-secondary от
+        span.ui-h2 1.4 млн
+      +ui-h5('при паушальном взносе 1млн', 'saving-info')
+    block

@@ -1,0 +1,20 @@
+extends ../../layouts/layout
+
+block variables
+  -
+    const pageTitle = 'Index'
+
+  -
+    const pages = [
+      { text: 'Главная', href: 'main.html' },
+    ]
+
+block content
+  main.main
+    +section
+      .inner
+        each item in pages
+          +ui-p1
+            a(href=item.href)=item.text
+            br
+            br

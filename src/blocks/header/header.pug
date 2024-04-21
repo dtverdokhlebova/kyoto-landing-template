@@ -1,0 +1,43 @@
+-
+  const headerMenu = [
+    {
+      text: 'О компании',
+      href: '#',
+    },
+    {
+      text: 'Тарифы',
+      href: '#',
+    },
+    {
+      text: 'Отзывы',
+      href: '#',
+    },
+    {
+      text: 'Контакты',
+      href: '#',
+    },
+  ]
+
+  const socialsItemsHeader =[
+    { iconHover: 'icon_inst_color', iconStart: 'icon_inst-grey' },
+    { iconHover: 'icon_vk_color', iconStart: 'icon_vk-grey' },
+  ]
+
+header.header
+  .inner
+    a.header__logo(href='/'): img(src='../../images/logo.svg' alt='')
+    button.header__burger-open(onclick='window.openBurgerMenu()')
+      .svg
+        include ../../images/icon_burger.svg
+    .header__burger
+      button.header__close(onclick='window.closeBurgerMenu()')
+        .svg
+          include ../../images/icon_cross.svg
+      .header__burger-wrapper
+        ul.header__menu
+          each item, index in headerMenu
+            li.header__menu-item
+              a.header__menu-link(href=item.href class=(index ? '' : 'active')) !{item.text}
+        .header__actions
+          a.header__phone(href='tel:+70000000000') +7 (000) 000-00-00
+          +ui-button('Заказать звонок', '--p-xs, --fz-xs, --outline-gradient')

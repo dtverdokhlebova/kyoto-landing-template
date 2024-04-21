@@ -1,0 +1,137 @@
+.banner {
+  position: relative;
+  color: $white;
+  &__item {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - var(--header-height, var(--header-height-initial)));
+  }
+  &__inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+    padding-top: 185px;
+    padding-bottom: 185px;
+    @include media-tablet {
+      padding-top: 160px;
+      padding-bottom: 110px;
+      align-items: center;
+    }
+  }
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &__content {
+    @include media-tablet {
+      flex-grow: 1;
+      text-align: center;
+    }
+  }
+  &__text {
+    max-width: 1020px;
+    margin-bottom: 44px;
+  }
+  &__ui-h1 {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+  &__ui-h3 {
+    @include media-tablet {
+      max-width: 308px;
+      margin: 0 auto;
+    }
+  }
+  &__actions {
+    @include media-tablet {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+    }
+  }
+  &__features {
+    display: flex;
+    gap: 114px;
+    margin-top: 25px;
+    @include media-laptop {
+      gap: 30px;
+    }
+    @include media-tablet {
+      display: none;
+    }
+  }
+  &__feature {
+    position: relative;
+    display: grid;
+    grid-template-areas: 'main';
+    max-width: 415px;
+    padding-left: 35px;
+    @include media-laptop {
+      max-width: 320px;
+      padding-left: 20px;
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 3px;
+      height: 130px;
+      background: url('/images/banner-feature-decor.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    &-label {
+      grid-area: main;
+      text-align: center;
+      font-size: 164px;
+      line-height: 1.3;
+      font-family: $fontHZ;
+      background: $gradient;
+      background: linear-gradient(130.14deg, rgb(138 92 42 / 0.13) 13.54%, rgb(194 166 80 / 0.1053) 50.18%, rgb(209 186 90 / 0.1196) 57.67%, rgb(200 173 83 / 0.1118) 63.23%, rgb(163 124 54 / 0.13) 84.8%);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      @include media-laptop {
+        font-size: 100px;
+      }
+    }
+    &-text {
+      position: relative;
+      place-self: center;
+      grid-area: main;
+      font-size: 25px;
+      line-height: 1.3;
+      @include media-laptop {
+        font-size: 20px;
+      }
+    }
+  }
+  &__ui-swiper-pagination {
+    position: absolute;
+    bottom: 124px;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    @include media-laptop {
+      bottom: 50px;
+    }
+    @include media-tablet {
+      bottom: 50px;
+    }
+  }
+}

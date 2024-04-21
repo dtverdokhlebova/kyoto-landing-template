@@ -1,0 +1,57 @@
+.section {
+  padding: 195px 0;
+  @include media-laptop {
+    padding: 120px 0;
+  }
+  @include media-tablet {
+    padding: 94px 0;
+  }
+  &--pt-0 {
+    padding-top: 0;
+  }
+  &--pb-0 {
+    padding-bottom: 0;
+  }
+  &--contacts {
+    background-image: url('/images/section-contacts-bg.svg');
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: auto 245px;
+    @include media-tablet {
+      background: none;
+    }
+  }
+  &--geography {
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 1310px;
+      background-image: url('/images/section-geography-bg.svg');
+      background-repeat: no-repeat;
+      background-position: top center;
+      @include media-laptop {
+        display: none;
+      }
+    }
+  }
+  &--saving {
+    background-image: url('/images/section-saving-bg.svg');
+    background-repeat: no-repeat;
+    background-position: top bottom;
+    @include media-tablet {
+      background: none;
+    }
+  }
+  &--why-us {
+    background-image: url('/images/section-why-us-bg.svg');
+    background-repeat: no-repeat;
+    background-position: top center;
+    @include media-laptop {
+      background-position: calc(100% + 120px) -284px;
+    }
+  }
+}

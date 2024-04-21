@@ -1,0 +1,22 @@
+.geography {
+  &__ui-h2 {
+    &:not(:last-child) {
+      margin-bottom: 14px;
+      @include media-tablet {
+        margin-bottom: 10px;
+      }
+    }
+  }
+  &__ui-h5 {
+    @include media-tablet {
+      display: none;
+    }
+  }
+  &__img {
+    max-width: 1088px;
+    margin: 0 auto;
+    img {
+      display: block;
+    }
+  }
+}

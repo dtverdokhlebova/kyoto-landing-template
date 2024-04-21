@@ -1,0 +1,90 @@
+mixin advantages(mods)
+  -
+    const baseName = 'advantages'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  -
+    const items = [
+      { img: '../../images/advantages/advantages-img-1.jpg',
+        icon: '../../images/advantages/advantages-icon-1.svg',
+        title: 'Помещение',
+        list: [
+          'Подробная инструкция по поиску',
+          'Презентация для арендодателя',
+          'Помощь в переговорах ',
+          'с собственником',
+          'Дизайн проект',
+          'Проведение отделочных работ',
+        ]
+      },
+      { img: '../../images/advantages/advantages-img-2.jpg',
+        icon: '../../images/advantages/advantages-icon-2.svg',
+        title: 'Обучение',
+        list: [
+          'Детальное обучение партнера ведению бизнеса',
+          'Подробное обучение всех сотрудников (видео, тексты, тесты) с вашим минимальным вовлечением',
+        ]
+      },
+      { img: '../../images/advantages/advantages-img-3.jpg',
+        icon: '../../images/advantages/advantages-icon-3.svg',
+        title: 'Продажи',
+        list: [
+          'Обучение работе в amoCRM',
+          'Скрипты продаж',
+          'Обучение продажам',
+        ]
+      },
+      { img: '../../images/advantages/advantages-img-4.jpg',
+        icon: '../../images/advantages/advantages-icon-4.svg',
+        title: 'Настройка систем',
+        list: [
+          'Настройка amoCRM',
+          'Настройка Yclients или Altegio',
+          'Чат-бот, который автоматизирует работу с базой гостей',
+          'Внедрение бонусной системы',
+        ]
+      },
+      { img: '../../images/advantages/advantages-img-5.jpg',
+        icon: '../../images/advantages/advantages-icon-5.svg',
+        title: 'Маркетинг',
+        list: [
+          'Масштабное открытие, на котором будет от 50 гостей',
+          'Многофункциональный сайт',
+          'Брендбук',
+          'Оформление картографических сервисов с SEO продвижением',
+          'Маркетинговый план',
+          'Макеты печатной продукции',
+        ]
+      },
+      { img: '../../images/advantages/advantages-img-6.jpg',
+        icon: '../../images/advantages/advantages-icon-6.svg',
+        title: 'Отдел контроля качества',
+        list: [
+          'Обзвон базы гостей для поиска точек роста в сервисе, маркетинге и продажах',
+          'Приглашение тайных гостей',
+          'Проверка качества звонков и переписок менеджеров и администраторов',
+        ]
+      },
+    ]
+
+  .advantages(class=allMods)&attributes(attributes)
+    each item in items
+      .advantages__item
+        .advantages__img
+          img(src=item.img, alt='')
+        .advantages__content
+          .advantages__icon
+            img(src=item.icon, alt='')
+          .advantages__text
+            +ui-h5(item.title , 'advantages, --semibold, --t-fz-l')
+            ul.advantages__list.ui-p1.ui-p1--semibold
+              each li in item.list
+                li !{li}
+    block
